@@ -29,7 +29,7 @@ pass :- password
 - [Supabase](https://supabase.com/)
 - [shadcn/ui](https://ui.shadcn.dev/)
 - [Tailwind CSS](https://tailwindcss.com/)
-- [Hugging Face API](https://huggingface.co/)
+- [GEMENIE API]
 - [Vercel](https://vercel.com/)
 
 ---
