@@ -10,6 +10,8 @@ Gmail :-  rohibanga1@gmail.com
 pass :- password
 ```
 
+### DEMO :-  https://youtu.be/H4SoQ-1B4oc
+
 ## 🚀 Features
 
 - 🔐 Auth with Supabase (email/password & Google OAuth)
