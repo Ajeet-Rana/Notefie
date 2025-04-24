@@ -104,7 +104,7 @@ export function AuthForm({ authType }: AuthFormProps) {
     const { error } = await supabase.auth.signInWithOAuth({
       provider: "google",
       options: {
-        redirectTo: `http://localhost:3000/note`,
+        redirectTo: `https://notefie.vercel.app//note`,
       },
     });
 
