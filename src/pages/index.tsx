@@ -8,7 +8,6 @@ import NoteCard from "@/components/noteCard";
 export default function NotesPage() {
   const { user, loading } = useSupabaseAuth();
   const router = useRouter();
-
   useEffect(() => {
     if (!loading && !user) {
       router.push("/login");

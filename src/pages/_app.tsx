@@ -1,5 +1,6 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useSupabaseAuth } from "@/lib/useSupabaseAuth";
+import "../global.css";
 
 const queryClient = new QueryClient();
 
