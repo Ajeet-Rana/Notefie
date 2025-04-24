@@ -8,7 +8,8 @@ export function useSupabaseAuth() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const currentSession = supabase.auth.getSession().then(({ data }) => {
+    // Remove the unused variable assignment
+    supabase.auth.getSession().then(({ data }) => {
       setSession(data.session);
       setUser(data.session?.user ?? null);
       setLoading(false);
@@ -21,7 +22,9 @@ export function useSupabaseAuth() {
       setUser(session?.user ?? null);
     });
 
-    return () => subscription.unsubscribe();
+    return () => {
+      subscription.unsubscribe();
+    };
   }, []);
 
   return { session, user, loading };

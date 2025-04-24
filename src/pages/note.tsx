@@ -116,8 +116,8 @@ export default function Notes() {
           <h2 className="text-2xl font-bold">Note Details</h2>
           {/* Find the selected note */}
           {data?.notes
-            .filter((note: any) => note.id === selectedNoteId)
-            .map((note: any) => (
+            ?.filter((note: Note) => note.id === selectedNoteId)
+            .map((note: Note) => (
               <div key={note.id}>
                 <h3 className="text-xl font-semibold">{note.title}</h3>
                 <p className="text-sm text-gray-700">{note.content}</p>
@@ -161,7 +161,7 @@ export default function Notes() {
         </div>
       )}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
-        {data?.notes.map((note: Note) => (
+        {data?.notes?.map((note: Note) => (
           <div
             key={note.id}
             className="border rounded-xl p-4 shadow-sm bg-white space-y-2"

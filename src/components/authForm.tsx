@@ -48,18 +48,30 @@ export function AuthForm({ authType }: AuthFormProps) {
     const { email, password } = values;
 
     try {
-      const { error } =
+      const { data, error } =
         authType === "sign-up"
           ? await supabase.auth.signUp({ email, password })
           : await supabase.auth.signInWithPassword({ email, password });
 
       if (error) {
         setErrorMessage(error.message);
-      } else {
-        router.push("/note");
+        return;
       }
-    } catch (error: any) {
-      setErrorMessage(error.message);
+
+      // Additional check for sign-up success
+      if (authType === "sign-up" && data?.user?.identities?.length === 0) {
+        setErrorMessage("User already registered");
+        return;
+      }
+
+      router.push("/note");
+    } catch (error: unknown) {
+      // Proper error typing
+      if (error instanceof Error) {
+        setErrorMessage(error.message);
+      } else {
+        setErrorMessage("An unknown error occurred");
+      }
     } finally {
       setLoading(false);
     }
