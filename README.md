@@ -56,9 +56,7 @@ yarn
 NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
 SUPABASE_SERVICE_ROLE_KEY=your-service-role-key (if needed)
-
-NEXT_PUBLIC_HUGGINGFACE_API=https://api-inference.huggingface.co/models/<model-name>
-HUGGINGFACE_API_KEY=your-huggingface-token
+GEMENIE API=your-huggingface-token
 
 ```
 ### 4. Run Locally
